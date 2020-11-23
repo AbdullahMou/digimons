@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%result.forEach(val=>{%>
+        <div>
+            <h2>
+                <%=val.name%>
+            </h2>
+            <img src="<%=val.image%>" alt="">
+            <h3>
+                <%=val.level%>
+            </h3>
+
+            <form action="/details/<%=val.id%>" method="GET">
+                <input hidden type="text" name="name" value="<%=val.name%>">
+                <input hidden type="text" name="image" value="<%=val.image%>">
+                <input hidden type="text" name="level" value="<%=val.level%>">
+                <input type="submit" value="show details">
+            </form>
+        </div><br><br>
+        <%})%>
+</body>
+
+</html>
